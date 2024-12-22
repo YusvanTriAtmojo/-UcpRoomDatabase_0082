@@ -2,6 +2,13 @@ package com.example.ucp2.ui.viewmodel
 
 import com.example.ucp2.data.entity.Suplier
 
+data class SprUIState(
+    val suplierEvent: SuplierEvent = SuplierEvent(),
+    var isEntryValid: FormErrorStatespr = FormErrorStatespr(),
+    val snackBarMessage: String? = null,
+)
+
+
 data class FormErrorStatespr(
     val id: String? = null,
     val nama: String? = null,
