@@ -13,6 +13,8 @@ import com.example.ucp2.ui.view.barang.DetailBrgView
 import com.example.ucp2.ui.view.barang.InsertBrgView
 import com.example.ucp2.ui.view.barang.ListBrgView
 import com.example.ucp2.ui.view.barang.UpdateBrgView
+import com.example.ucp2.ui.view.suplier.InsertSprView
+import com.example.ucp2.ui.view.suplier.ListSprView
 
 @Composable
 fun PengelolaHalaman(
@@ -106,6 +108,29 @@ fun PengelolaHalaman(
         ) {
 
             UpdateBrgView(
+                onBack = {
+                    navController.popBackStack()
+                },
+                onNavigate = {
+                    navController.popBackStack()
+                },
+                modifier = modifier,
+            )
+        }
+        composable(
+            route = DestinasiListSpr.route
+        ) {
+            ListSprView(
+                onBack = {
+                    navController.popBackStack()
+                },
+                modifier = modifier
+            )
+        }
+        composable(
+            route = DestinasiInsertSpr.route
+        ) {
+            InsertSprView(
                 onBack = {
                     navController.popBackStack()
                 },
