@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -115,6 +117,57 @@ fun HomeView(
                             Text(
                                 color = Color.White,
                                 text = "Add Barang"
+                            )
+                        }
+                    }
+                }
+                Row {
+                    Card(
+                        onClick = keListSuplier,
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFF016D47)),
+                        modifier = Modifier
+                            .padding(start = 45.dp, 20.dp)
+                            .height(150.dp)
+                            .width(150.dp)
+                    ) {
+                        Column(
+                            modifier = modifier
+                                .padding(30.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Filled.Home,
+                                contentDescription = "",
+                                tint = Color.White,
+                                modifier = Modifier.padding(start = 30.dp, top = 20.dp)
+                            )
+                            Text(
+                                color = Color.White,
+                                text = "List Suplier"
+                            )
+                        }
+                    }
+
+                    Card(
+                        onClick = keAddSuplier,
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFF016D47)),
+                        modifier = Modifier
+                            .padding(20.dp)
+                            .height(150.dp)
+                            .width(150.dp)
+                    ) {
+                        Column(
+                            modifier = modifier
+                                .padding(30.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Filled.Person,
+                                contentDescription = "",
+                                tint = Color.White,
+                                modifier = Modifier.padding(start = 30.dp, top = 20.dp)
+                            )
+                            Text(
+                                color = Color.White,
+                                text = "Add Suplier"
                             )
                         }
                     }
