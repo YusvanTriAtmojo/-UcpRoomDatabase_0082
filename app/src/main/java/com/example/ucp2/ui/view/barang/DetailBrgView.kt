@@ -46,7 +46,7 @@ fun DetailBrgView(
     modifier: Modifier = Modifier,
     viewModel: DetailBrgViewModel = viewModel(factory = PenyediaViewModel.Factory),
     onBack: () -> Unit = { },
-    onEditClick: (String) -> Unit = { },
+    onEditClick: (Int) -> Unit = { },
     onDeleteClick: () -> Unit = { }
 ){
     Scaffold (
@@ -176,7 +176,7 @@ fun ItemDetailBrg(
         Column (
             modifier = Modifier.padding(16.dp)
         ) {
-            ComponentDetailBrg(judul = "ID", isinya = barang.id)
+            ComponentDetailBrg(judul = "ID", isinya = barang.id.toString())
             Spacer(modifier = Modifier.padding(4.dp))
 
             ComponentDetailBrg(judul = "Nama", isinya = barang.nama)

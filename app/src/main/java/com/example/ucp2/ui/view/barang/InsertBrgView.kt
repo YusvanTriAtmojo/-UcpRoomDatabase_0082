@@ -15,7 +15,6 @@ import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.material.icons.filled.Create
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -90,7 +89,7 @@ fun InsertBrgView(
                 modifier = modifier
             )
 
-            Card ( modifier = modifier.height(10000.dp).padding(start = 15.dp, end = 15.dp),
+            Card ( modifier = modifier.height(520.dp).padding(start = 15.dp, end = 15.dp),
                 colors = CardDefaults.cardColors(containerColor = Color.White)){
                 InsertBodyBrg(
                     uiState = uiState,
@@ -151,34 +150,6 @@ fun FormBarang(
     Column(
         modifier = modifier.fillMaxWidth()
     ) {
-
-        OutlinedTextField(
-            modifier = Modifier.fillMaxWidth(),
-            value = barangEvent.id,
-            onValueChange = {
-                onValueChange(barangEvent.copy(id = it))
-            },
-
-            label = { Text("ID") },
-            isError = errorState.id != null,
-            placeholder = { Text("Masukkan id") },
-            keyboardOptions = KeyboardOptions(
-                keyboardType = KeyboardType.Number,
-                imeAction = ImeAction.Next
-            ),
-            singleLine = true,
-            shape = RoundedCornerShape(50.dp),
-            leadingIcon = {
-                Icon(
-                    imageVector = Icons.Default.Star,
-                    contentDescription = ""
-                )
-            }
-        )
-        Text(
-            text = errorState.id ?: "",
-            color = Color.Red
-        )
         OutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
             value = barangEvent.nama,

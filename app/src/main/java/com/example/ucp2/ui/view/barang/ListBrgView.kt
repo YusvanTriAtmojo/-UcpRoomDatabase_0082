@@ -47,7 +47,7 @@ import kotlinx.coroutines.launch
 fun ListBrgView(
     viewModel: ListBrgViewModel = viewModel(factory = PenyediaViewModel.Factory),
     onBack: () -> Unit = { },
-    onDetailClick: (String) -> Unit = { },
+    onDetailClick: (Int) -> Unit = { },
     modifier: Modifier = Modifier
 ) {
     Scaffold(
@@ -82,7 +82,7 @@ fun ListBrgView(
 @Composable
 fun BodyHomeBrgView(
     listUiState: ListBrgUiState,
-    onClick: (String) -> Unit = { },
+    onClick: (Int) -> Unit = { },
     modifier: Modifier = Modifier
 ) {
     val coroutineScope = rememberCoroutineScope()
@@ -138,7 +138,7 @@ fun BodyHomeBrgView(
 fun ListBarang(
     listBrg: List<Barang>,
     modifier: Modifier = Modifier,
-    onClick: (String) -> Unit = { }
+    onClick: (Int) -> Unit = { }
 ) {
     LazyColumn (
         modifier = modifier

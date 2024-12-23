@@ -46,7 +46,7 @@ fun PengelolaHalaman(
             route = DestinasiListBrg.route
         ) {
             ListBrgView(
-                onDetailClick = {id: String ->
+                onDetailClick = {id: Int ->
                     navController.navigate("${DestinasiDetailBrg.route}/$id")
                     println(
                         "PengelolaHalaman: id = $id"
@@ -76,11 +76,11 @@ fun PengelolaHalaman(
             DestinasiDetailBrg.routesWithArg,
             arguments = listOf(
                 navArgument(DestinasiDetailBrg.ID) {
-                    type = NavType.StringType
+                    type = NavType.IntType
                 }
             )
         ) {
-            val id = it.arguments?.getString(DestinasiDetailBrg.ID)
+            val id = it.arguments?.getInt(DestinasiDetailBrg.ID)
 
             id?.let { id ->
                 DetailBrgView(
@@ -102,7 +102,7 @@ fun PengelolaHalaman(
             DestinasiUpdateBrg.routerWithArg,
             arguments = listOf(
                 navArgument(DestinasiUpdateBrg.ID) {
-                    type = NavType.StringType
+                    type = NavType.IntType
                 }
             )
         ) {

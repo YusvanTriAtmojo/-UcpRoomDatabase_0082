@@ -20,7 +20,7 @@ class DetailBrgViewModel(
     savedStateHandle: SavedStateHandle,
     private val repositoryBrg: RepositoryBrg,
 ) : ViewModel() {
-    private val _id: String = checkNotNull(savedStateHandle[DestinasiDetailBrg.ID])
+    private val _id: Int = checkNotNull(savedStateHandle[DestinasiDetailBrg.ID])
 
     val detailUiState: StateFlow<DetailBrgUiState> = repositoryBrg.getBrg(_id)
         .filterNotNull()

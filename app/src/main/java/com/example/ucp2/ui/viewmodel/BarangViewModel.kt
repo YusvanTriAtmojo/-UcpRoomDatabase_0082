@@ -24,7 +24,6 @@ class BarangViewModel(
     private fun validateFields(): Boolean {
         val event = uiState.barangEvent
         val errorState = FormErrorStatebrg(
-            id = if (event.id.isNotEmpty()) null else "Id tidak boleh kosong",
             nama = if (event.nama.isNotEmpty()) null else "Nama tidak boleh kosong",
             deskripsi = if (event.deskripsi.isNotEmpty()) null else "Deskripsi tidak boleh kosong",
             harga = if (event.harga > 0) null else "Harga tidak boleh kosong",
@@ -95,7 +94,7 @@ fun BarangEvent.toBarangEntity(): Barang = Barang (
 )
 
 data class BarangEvent(
-    val id: String = "",
+    val id: Int = 0,
     val nama: String = "",
     val deskripsi: String = "",
     val harga: Double = 0.00,
