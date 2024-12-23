@@ -2,12 +2,17 @@ package com.example.ucp2.ui.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.List
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -63,6 +68,57 @@ fun HomeView(
                     color = Color.White,
                     text = "Menu Utama"
                 )
+                Row {
+                    Card(
+                        onClick = keListBarang,
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFF016D47)),
+                        modifier = Modifier
+                            .padding(start = 45.dp, 20.dp)
+                            .height(150.dp)
+                            .width(150.dp)
+                    ) {
+                        Column(
+                            modifier = modifier
+                                .padding(30.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Filled.List,
+                                contentDescription = "",
+                                tint = Color.White,
+                                modifier = Modifier.padding(start = 30.dp, top = 20.dp),
+                            )
+                            Text(
+                                color = Color.White,
+                                text = "List Barang"
+                            )
+                        }
+                    }
+
+                    Card(
+                        onClick = keAddBarang,
+                        colors = CardDefaults.cardColors(containerColor = Color(0xFF016D47)),
+                        modifier = Modifier
+                            .padding(20.dp)
+                            .height(150.dp)
+                            .width(150.dp)
+                    ) {
+                        Column(
+                            modifier = modifier
+                                .padding(30.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Filled.Add,
+                                contentDescription = "",
+                                tint = Color.White,
+                                modifier = Modifier.padding(start = 30.dp, top = 20.dp)
+                            )
+                            Text(
+                                color = Color.White,
+                                text = "Add Barang"
+                            )
+                        }
+                    }
+                }
             }
         }
     }
