@@ -20,10 +20,13 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -32,9 +35,44 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.ucp2.data.entity.Suplier
+import com.example.ucp2.ui.customwidget.TopAppBar
 import com.example.ucp2.ui.viewmodel.ListSprUiState
+import com.example.ucp2.ui.viewmodel.ListSprViewModel
+import com.example.ucp2.ui.viewmodel.PenyediaViewModel
 import kotlinx.coroutines.launch
+
+@Composable
+fun ListSprView(
+    viewModel: ListSprViewModel = viewModel(factory = PenyediaViewModel.Factory1),
+    onBack: () -> Unit = { },
+    modifier: Modifier = Modifier
+) {
+    Scaffold(
+        modifier = Modifier.padding(top = 25.dp),
+        topBar = {
+            TopAppBar(
+                judul = "Daftar Suplier",
+                subjudul = "",
+                showBackButton = true,
+                showIcon = false,
+                showImage = false,
+                onBack = onBack,
+                modifier = modifier
+            )
+        },
+    ) { innerPadding ->
+        val listUiState by viewModel.listSprUiState.collectAsState()
+        Card ( modifier = modifier.height(1000.dp),
+            colors = CardDefaults.cardColors(containerColor = Color(0xFF01A58B))){
+            BodyHomeSprView(
+                listUiState = listUiState,
+                modifier = Modifier.padding(innerPadding)
+            )
+        }
+    }
+}
 
 @Composable
 fun BodyHomeSprView(
