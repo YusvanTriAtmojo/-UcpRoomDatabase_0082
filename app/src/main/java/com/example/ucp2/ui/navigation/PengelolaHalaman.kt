@@ -66,7 +66,7 @@ fun PengelolaHalaman(
                     navController.popBackStack()
                 },
                 onNavigate = {
-                    navController.popBackStack()
+
                 },
                 modifier = modifier,
             )
@@ -135,7 +135,7 @@ fun PengelolaHalaman(
                     navController.popBackStack()
                 },
                 onNavigate = {
-                    navController.popBackStack()
+
                 },
                 modifier = modifier,
             )
