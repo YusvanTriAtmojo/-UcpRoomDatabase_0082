@@ -1,7 +1,7 @@
 package com.example.ucp2.dependenciesinjection
 
 import android.content.Context
-import com.example.ucp2.data.database.InventarisDatabase
+import com.example.ucp2.data.database.InvtDatabase
 import com.example.ucp2.repository.LocalRepositoryBrg
 import com.example.ucp2.repository.LocalRepositorySpr
 import com.example.ucp2.repository.RepositoryBrg
@@ -14,9 +14,9 @@ interface InterfaceContainerApp {
 
 class ContainerApp(private val context: Context) : InterfaceContainerApp {
     override val repositoryBrg: RepositoryBrg by lazy {
-        LocalRepositoryBrg(InventarisDatabase.getDatabase(context).barangDao())
+        LocalRepositoryBrg(InvtDatabase.getDatabase(context).barangDao())
     }
     override val repositorySpr: RepositorySpr by lazy {
-        LocalRepositorySpr(InventarisDatabase.getDatabase(context).suplierDao())
+        LocalRepositorySpr(InvtDatabase.getDatabase(context).suplierDao())
     }
 }
