@@ -1,5 +1,6 @@
 package com.example.ucp2.ui.view.barang
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -32,10 +33,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.ucp2.R
 import com.example.ucp2.data.entity.Barang
 import com.example.ucp2.ui.customwidget.TopAppBar
 import com.example.ucp2.ui.viewmodel.ListBrgUiState
@@ -180,10 +183,13 @@ fun CardBrg (
             )
         ) {
             Row {
-                Icon(modifier = Modifier.padding(30.dp).size(80.dp),
-                    imageVector = Icons.Filled.ShoppingCart,
+                Image(
+                    painter = painterResource(id = R.drawable.krj),
                     contentDescription = "",
-                    tint = Color.White
+                    modifier = Modifier
+                        .size(80.dp)
+                        .padding(10.dp, top = 25.dp)
+
                 )
                 Column(
                     modifier = Modifier.padding(8.dp)

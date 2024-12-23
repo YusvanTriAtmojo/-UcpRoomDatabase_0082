@@ -1,11 +1,13 @@
 package com.example.ucp2.ui.view
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
@@ -21,9 +23,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.ucp2.R
 import com.example.ucp2.ui.customwidget.TopAppBar
 
 
@@ -83,11 +87,13 @@ fun HomeView(
                             modifier = modifier
                                 .padding(30.dp)
                         ) {
-                            Icon(
-                                imageVector = Icons.AutoMirrored.Filled.List,
+                            Image(
+                                painter = painterResource(id = R.drawable.listbrg),
                                 contentDescription = "",
-                                tint = Color.White,
-                                modifier = Modifier.padding(start = 30.dp, top = 20.dp),
+                                modifier = Modifier
+                                    .size(70.dp)
+                                    .padding(start = 25.dp)
+
                             )
                             Text(
                                 color = Color.White,
@@ -108,11 +114,13 @@ fun HomeView(
                             modifier = modifier
                                 .padding(30.dp)
                         ) {
-                            Icon(
-                                imageVector = Icons.Filled.Add,
+                            Image(
+                                painter = painterResource(id = R.drawable.brg),
                                 contentDescription = "",
-                                tint = Color.White,
-                                modifier = Modifier.padding(start = 30.dp, top = 20.dp)
+                                modifier = Modifier
+                                    .size(70.dp)
+                                    .padding(start = 20.dp)
+
                             )
                             Text(
                                 color = Color.White,
@@ -134,11 +142,13 @@ fun HomeView(
                             modifier = modifier
                                 .padding(30.dp)
                         ) {
-                            Icon(
-                                imageVector = Icons.Filled.Home,
+                            Image(
+                                painter = painterResource(id = R.drawable.listspr),
                                 contentDescription = "",
-                                tint = Color.White,
-                                modifier = Modifier.padding(start = 30.dp, top = 20.dp)
+                                modifier = Modifier
+                                    .size(70.dp)
+                                    .padding(start = 20.dp)
+
                             )
                             Text(
                                 color = Color.White,
@@ -159,11 +169,13 @@ fun HomeView(
                             modifier = modifier
                                 .padding(30.dp)
                         ) {
-                            Icon(
-                                imageVector = Icons.Filled.Person,
+                            Image(
+                                painter = painterResource(id = R.drawable.spr),
                                 contentDescription = "",
-                                tint = Color.White,
-                                modifier = Modifier.padding(start = 30.dp, top = 20.dp)
+                                modifier = Modifier
+                                    .size(70.dp)
+                                    .padding(start = 20.dp)
+
                             )
                             Text(
                                 color = Color.White,
